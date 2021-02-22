@@ -75,7 +75,15 @@
       </div>
     </div>
   </form:form>
-  <a href="/login">Назад</a>
+  <div class="row mt-1">
+    <div class="col mx-auto">
+    </div>
+    <div class="col-1">
+      <a href="/login" class="btn btn-primary">Назад</a>
+    </div>
+    <div class="col mx-auto">
+    </div>
+  </div>
 </div>
 </body>
 </html>
