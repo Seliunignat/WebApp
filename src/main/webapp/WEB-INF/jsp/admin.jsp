@@ -13,6 +13,21 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="../../resources/css/login.css">
   <title>Log in with your account</title>
+  <script type="text/javascript">
+    let checked = false;
+
+    function checkedAll() {
+      const aa = document.getElementById("frm1");
+      if (checked == false) {
+        checked = true
+      } else {
+        checked = false
+      }
+      for (let i = 0; i < aa.elements.length; i++) {
+        aa.elements[i].checked = checked;
+      }
+    }
+  </script>
 </head>
 
 
@@ -32,8 +47,9 @@
       </div>
     </div>
   </div>
+
   <table class="table-bordered mx-2">
-    <form action="${pageContext.request.contextPath}/admin" method="post">
+    <form id="frm1" action="${pageContext.request.contextPath}/admin" method="post">
       <div class="row ml-3 mb-1">
         <div class="mr-1">
           <button class="btn btn-dark" type="submit" name="action" value="block">Block</button>
@@ -47,7 +63,7 @@
       </div>
       <thead>
         <tr>
-          <th scope="col"></th>
+          <th title="Select/Remove all selection" scope="col"><input type="checkbox" onclick="checkedAll()"></th>
           <th scope="col">ID</th>
           <th scope="col">UserName</th>
           <th scope="col">Password</th>
